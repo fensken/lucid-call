@@ -13,7 +13,6 @@ const HomeLayout = ({ children }: { children: React.ReactNode }) => {
           <div className="w-full">{children}</div>
         </section>
       </div>
-      Footer
     </main>
   );
 };

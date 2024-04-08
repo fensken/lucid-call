@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import MobileNavbar from "./MobileNavbar";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 
 type NavbarProps = {};
 
@@ -23,7 +24,9 @@ const Navbar: FC<NavbarProps> = ({}) => {
       </Link>
 
       <div className="flex-between gap-5">
-        {/* clerk user management */}
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
 
         <MobileNavbar />
       </div>
