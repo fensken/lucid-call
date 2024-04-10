@@ -9,13 +9,20 @@ const Home: FC<HomeProps> = async ({}) => {
   const now = new Date();
   const user = await currentUser();
 
-  const time = now.toLocaleTimeString("en-US", {
+  // Determine the user's locale
+  // This example uses the browser's language settings
+  const userLocale = navigator.language;
+
+  // Format the date and time according to the user's locale
+  const time = new Intl.DateTimeFormat(userLocale, {
     hour: "2-digit",
     minute: "2-digit",
-  });
-  const date = new Intl.DateTimeFormat("en-US", { dateStyle: "full" }).format(
-    now
-  );
+    hour12: true, // Use 12-hour clock for US, 24-hour clock for others
+  }).format(now);
+
+  const date = new Intl.DateTimeFormat(userLocale, {
+    dateStyle: "full",
+  }).format(now);
 
   return (
     <section className="flex size-full flex-col gap-5 xl:gap-y-8 text-white">
