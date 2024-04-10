@@ -8,8 +8,6 @@ const Home: FC<HomeProps> = async ({}) => {
   const now = new Date();
   const user = await currentUser();
 
-  console.log(user?.username);
-
   const time = now.toLocaleTimeString("en-US", {
     hour: "2-digit",
     minute: "2-digit",
