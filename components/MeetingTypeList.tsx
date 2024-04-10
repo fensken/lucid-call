@@ -7,10 +7,11 @@ import { Call, useStreamVideoClient } from "@stream-io/video-react-sdk";
 import ReactDatePicker from "react-datepicker";
 
 import { useToast } from "./ui/use-toast";
+import Loader from "./Loader";
 import HomeCard from "./HomeCard";
 import MeetingModal from "./MeetingModal";
 import { Textarea } from "./ui/textarea";
-import Loader from "./Loader";
+import { Input } from "./ui/input";
 
 type MeetingTypeListProps = {};
 
@@ -102,7 +103,7 @@ const MeetingTypeList: FC<MeetingTypeListProps> = ({}) => {
       />
       <HomeCard
         img="/icons/schedule.svg"
-        title="Schedule Meeting"
+        title="Schedule Meetings"
         description="Plan your meeting"
         className="bg-purple-1"
         handleClick={() => setMeetingState("isScheduleMeeting")}
@@ -133,6 +134,7 @@ const MeetingTypeList: FC<MeetingTypeListProps> = ({}) => {
               }
             />
           </div>
+
           <div className="flex w-full flex-col gap-2.5">
             <label className="text-base font-normal leading-[22.4px] text-sky-2">
               Select Date and Time
@@ -166,11 +168,28 @@ const MeetingTypeList: FC<MeetingTypeListProps> = ({}) => {
       )}
 
       <MeetingModal
+        isOpen={meetingState === "isJoiningMeeting"}
+        onClose={() => setMeetingState(undefined)}
+        title="Type the link here"
+        className="text-center"
+        buttonText="Join Meeting"
+        handleClick={() => router.push(values.link)}
+      >
+        <Input
+          placeholder="Meeting link"
+          onChange={(e) => setValues({ ...values, link: e.target.value })}
+          className="border-none bg-dark-3 focus-visible:ring-0 focus-visible:ring-offset-0"
+        />
+      </MeetingModal>
+
+      <MeetingModal
         isOpen={meetingState === "isInstantMeeting"}
         onClose={() => setMeetingState(undefined)}
         title="Start an Instant Meeting"
+        className="text-center"
+        buttonText="Start Meeting"
         handleClick={createMeeting}
-      ></MeetingModal>
+      />
     </section>
   );
 };

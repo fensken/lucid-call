@@ -47,6 +47,7 @@ const MeetingModal = ({
           </h1>
           {children}
           <Button
+            type="button"
             className={
               "bg-blue-1 focus-visible:ring-0 focus-visible:ring-offset-0"
             }
