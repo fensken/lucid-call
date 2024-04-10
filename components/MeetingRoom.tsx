@@ -68,9 +68,7 @@ const MeetingRoom: FC<MeetingRoomProps> = ({}) => {
         </div>
       </div>
 
-      <div className="fixed bottom-0 flex w-full items-center justify-center flex-wrap">
-        <CallControls onLeave={() => router.push(`/`)} />
-
+      <div className="fixed bottom-0 flex w-full items-center justify-center gap-[1rem] flex-wrap">
         <DropdownMenu>
           <div className="flex items-center">
             <DropdownMenuTrigger className="cursor-pointer rounded-2xl bg-[#19232d] px-4 py-2 hover:bg-[#4c535b]  ">
@@ -80,7 +78,7 @@ const MeetingRoom: FC<MeetingRoomProps> = ({}) => {
 
           <DropdownMenuContent className="border-dark-1 bg-dark-1 text-white">
             {["Grid", "Speaker-Left", "Speaker-Right"].map((item, index) => (
-              <div key={index}>
+              <div key={index} className="hover:bg-slate-700 rounded-md">
                 <DropdownMenuItem
                   onClick={() =>
                     setLayout(item.toLowerCase() as CallLayoutType)
@@ -88,7 +86,7 @@ const MeetingRoom: FC<MeetingRoomProps> = ({}) => {
                 >
                   {item}
                 </DropdownMenuItem>
-                <DropdownMenuSeparator className="border-dark-1" />
+                <DropdownMenuSeparator className="border-dark-1 " />
               </div>
             ))}
           </DropdownMenuContent>
@@ -101,6 +99,9 @@ const MeetingRoom: FC<MeetingRoomProps> = ({}) => {
             <Users size={20} className="text-white" />
           </div>
         </button>
+
+        <CallControls onLeave={() => router.push(`/`)} />
+
         {!isPersonalRoom && <EndCallButton />}
       </div>
     </section>

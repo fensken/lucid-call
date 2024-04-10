@@ -82,6 +82,10 @@
   filter: invert(1);
 }
 
+.str-video__call-controls__button {
+  height: fit-content;
+}
+
 /* =============================== */
 
 @layer utilities {
