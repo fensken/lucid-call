@@ -11,7 +11,8 @@ const Home: FC<HomeProps> = async ({}) => {
 
   // Determine the user's locale
   // This example uses the browser's language settings
-  const userLocale = navigator.language;
+  const userLocale =
+    typeof window !== "undefined" ? navigator.language : "en-US";
 
   // Format the date and time according to the user's locale
   const time = new Intl.DateTimeFormat(userLocale, {
