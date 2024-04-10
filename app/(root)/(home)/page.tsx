@@ -1,6 +1,7 @@
 import { FC } from "react";
-import MeetingTypeList from "@/components/MeetingTypeList";
 import { currentUser } from "@clerk/nextjs/server";
+
+import MeetingTypeList from "@/components/MeetingTypeList";
 
 type HomeProps = {};
 

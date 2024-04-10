@@ -32,7 +32,7 @@ const MeetingRoom: FC<MeetingRoomProps> = ({}) => {
 
   const isPersonalRoom = !!searchParams.get("personal");
   const [layout, setLayout] = useState<CallLayoutType>("speaker-left");
-  const [showParticipants, setShowParticipants] = useState(false);
+  const [showParticipants, setShowParticipants] = useState(true);
   const { useCallCallingState } = useCallStateHooks();
 
   const callingState = useCallCallingState();
@@ -54,21 +54,24 @@ const MeetingRoom: FC<MeetingRoomProps> = ({}) => {
 
   return (
     <section className="relative h-screen w-full overflow-hidden lg:px-14 md:px-10 px-5 pt-4 text-white">
-      <div className="relative flex size-full items-center justify-center">
+      <div className="relative pb-0 sm:pb-[70px] flex size-full items-center justify-center">
         <div className="flex size-full items-center">
           <CallLayout />
         </div>
 
         <div
-          className={cn("h-[calc(100vh-86px)] hidden ml-2", {
-            "show-block": showParticipants,
-          })}
+          className={cn(
+            "h-[65vh] sm:h-[80vh] overflow-y-auto hidden ml-4  z-20 absolute lg:static right-0 top-4 max-h-[650px]",
+            {
+              "show-block": showParticipants,
+            }
+          )}
         >
           <CallParticipantsList onClose={() => setShowParticipants(false)} />
         </div>
       </div>
 
-      <div className="fixed bottom-0 flex w-full items-center justify-center gap-[1rem] flex-wrap">
+      <div className="fixed bottom-4 left-0 flex w-full items-center justify-center gap-x-[1rem] flex-wrap">
         <DropdownMenu>
           <div className="flex items-center">
             <DropdownMenuTrigger className="cursor-pointer rounded-2xl bg-[#19232d] px-4 py-2 hover:bg-[#4c535b]  ">

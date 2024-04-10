@@ -86,6 +86,10 @@
   height: fit-content;
 }
 
+.str-video__speaker-layout__wrapper {
+  max-height: unset;
+}
+
 /* =============================== */
 
 @layer utilities {
