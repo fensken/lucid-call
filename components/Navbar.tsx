@@ -23,7 +23,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
         </p>
       </Link>
 
-      <div className="flex-between gap-5">
+      <div className="flex-between gap-5 sm:gap-0">
         <SignedIn>
           <UserButton />
         </SignedIn>
