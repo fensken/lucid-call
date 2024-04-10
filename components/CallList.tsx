@@ -67,10 +67,10 @@ const CallList: FC<CallListProps> = ({ type }) => {
     }
   }, [type, callRecordings, toast]);
 
-  if (isLoading) return <Loader />;
-
   const calls = getCalls();
   const noCallsMessage = getNoCallsMessage();
+
+  if (isLoading) return <Loader />;
 
   return (
     <div className="grid grid-cols-1 gap-5 xl:gap-8 xl:grid-cols-2 ">
