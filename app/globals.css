@@ -90,6 +90,11 @@
   max-height: unset;
 }
 
+.str-video__video-preview-container {
+  width: 100% !important;
+  max-width: 500px;
+}
+
 /* =============================== */
 
 @layer utilities {

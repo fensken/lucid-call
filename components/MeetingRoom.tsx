@@ -54,14 +54,14 @@ const MeetingRoom: FC<MeetingRoomProps> = ({}) => {
 
   return (
     <section className="relative h-screen w-full overflow-hidden lg:px-14 md:px-10 px-5 pt-4 text-white max-w-[1600px] mx-auto">
-      <div className="relative pb-0 sm:pb-[70px] flex size-full items-center justify-center">
-        <div className="flex size-full items-center">
+      <div className="relative flex size-full items-center justify-center">
+        <div className="flex size-full items-center pb-40 md:pb-0">
           <CallLayout />
         </div>
 
         <div
           className={cn(
-            "h-[65vh] sm:h-[80vh] overflow-y-auto hidden ml-4  z-20 absolute lg:static right-0 top-4 max-h-[650px]",
+            "h-[65vh] sm:h-[80vh] overflow-y-auto hidden ml-4 z-20 absolute lg:static right-0 top-4 max-h-[650px]",
             {
               "show-block": showParticipants,
             }
