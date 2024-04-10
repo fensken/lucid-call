@@ -65,7 +65,7 @@ const CallList: FC<CallListProps> = ({ type }) => {
     if (type === "recordings") {
       fetchRecordings();
     }
-  }, [type, callRecordings]);
+  }, [type, callRecordings, toast]);
 
   if (isLoading) return <Loader />;
 

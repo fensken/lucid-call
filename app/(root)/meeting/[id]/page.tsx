@@ -11,7 +11,7 @@ import MeetingRoom from "@/components/MeetingRoom";
 
 type pageProps = { params: { id: string } };
 
-const page: FC<pageProps> = ({ params }) => {
+const Page: FC<pageProps> = ({ params }) => {
   const { user, isLoaded } = useUser();
   const [isSetupComplete, setIsSetupComplete] = useState(false);
   const { call, isCallLoading } = useGetCallById(params.id);
@@ -44,4 +44,4 @@ const page: FC<pageProps> = ({ params }) => {
   );
 };
 
-export default page;
+export default Page;
