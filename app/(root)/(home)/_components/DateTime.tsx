@@ -8,7 +8,6 @@ const DateTime: FC<DateTimeProps> = ({}) => {
   const now = new Date();
 
   // Determine the user's locale
-  // This example uses the browser's language settings
   const userLocale =
     typeof window !== "undefined" ? navigator.language : "en-US";
 
