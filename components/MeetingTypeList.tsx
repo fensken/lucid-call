@@ -106,7 +106,10 @@ const MeetingTypeList: FC<MeetingTypeListProps> = ({}) => {
         title="Schedule Meetings"
         description="Plan your meeting"
         className="bg-purple-1"
-        handleClick={() => setMeetingState("isScheduleMeeting")}
+        handleClick={() => {
+          setMeetingState("isScheduleMeeting");
+          setValues({ ...values, description: "Upcoming meeting" });
+        }}
       />
       <HomeCard
         img="/icons/recordings.svg"
@@ -129,6 +132,7 @@ const MeetingTypeList: FC<MeetingTypeListProps> = ({}) => {
             </label>
             <Textarea
               className="border-none bg-dark-3 focus-visible:ring-0 focus-visible:ring-offset-0"
+              defaultValue={"Upcoming meeting"}
               onChange={(e) =>
                 setValues({ ...values, description: e.target.value })
               }

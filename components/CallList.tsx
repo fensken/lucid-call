@@ -26,7 +26,7 @@ const CallList: FC<CallListProps> = ({ type }) => {
       case "upcoming":
         return upcomingCalls;
       case "recordings":
-        return callRecordings;
+        return recordings;
       default:
         return [];
     }
@@ -112,7 +112,7 @@ const CallList: FC<CallListProps> = ({ type }) => {
           />
         ))
       ) : (
-        <h1 className="text-2xl font-bold text-white">{noCallsMessage}</h1>
+        <h1 className="text-lg italic text-white">{noCallsMessage}</h1>
       )}
     </div>
   );
