@@ -53,7 +53,7 @@ const MeetingRoom: FC<MeetingRoomProps> = ({}) => {
   };
 
   return (
-    <section className="relative h-screen w-full overflow-hidden lg:px-14 md:px-10 px-5 pt-4 text-white">
+    <section className="relative h-screen w-full overflow-hidden lg:px-14 md:px-10 px-5 pt-4 text-white max-w-[1600px] mx-auto">
       <div className="relative pb-0 sm:pb-[70px] flex size-full items-center justify-center">
         <div className="flex size-full items-center">
           <CallLayout />
