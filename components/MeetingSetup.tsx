@@ -7,6 +7,7 @@ import {
   useCall,
 } from "@stream-io/video-react-sdk";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 type MeetingSetupProps = {
   setIsSetupComplete: (value: boolean) => void;
@@ -54,7 +55,7 @@ const MeetingSetup: FC<MeetingSetupProps> = ({ setIsSetupComplete }) => {
       </div>
 
       <Button
-        className="rounded-md bg-green-500 px-4 py-2.5"
+        className="rounded-md bg-emerald-800 hover:bg-emerald-700 px-4 py-2.5"
         onClick={() => {
           call.join();
           setIsSetupComplete(true);
@@ -62,6 +63,10 @@ const MeetingSetup: FC<MeetingSetupProps> = ({ setIsSetupComplete }) => {
       >
         Join meeting
       </Button>
+
+      <Link href={"/"} className="hover:underline">
+        Back
+      </Link>
     </div>
   );
 };
