@@ -25,7 +25,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
 
       <div className="flex-between gap-5 sm:gap-0">
         <SignedIn>
-          <UserButton />
+          <UserButton afterSignOutUrl="/" />
         </SignedIn>
 
         <MobileNavbar />
